@@ -1,32 +1,34 @@
 #Written by M00kaw@teh-geek.com edited by Jon Nyman
 #!/bin/bash
 
-function mp3LQ(){
+function getLink(){
+cd ~/Downloads
 echo "Feed me the YouTube-Link :D"
 read link
 sleep 1
+return link
+}
+
+function mp3LQ(){
+getLink
 youtube-dl -f 17 -t -x --audio-format mp3 --audio-quality 9 $link
 exit 0
 }
 
 function mp3HQ(){
-echo "Feed me the YouTube-Link :D"
-read link
-sleep 1
+getLink
 youtube-dl -f 17 -t -x --audio-format mp3 --audio-quality 1 $link
 exit 0
 }
 
 function videoLQ(){
-echo "Feed me the link :D "
-read link
+getLink
 youtube-dl $link -f 18 -t
 exit 0
 }
 
 function videoHQ(){
-echo "Feed me the link :D "
-read link
+getLink
 youtube-dl $link --max-quality "mp4" -t
 exit 0
 }

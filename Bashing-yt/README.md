@@ -10,6 +10,12 @@ A bash edited from <https://github.com/M00kaw/Bashing-ytdl> to make downloading 
 
 Install youtube-dl and ffmpeg from your repository and it should all work well. 
 
+### Make Bash Global
+
+**First time only!** `chmod +x yt.sh`
+
+`sudo cp yt.sh /usr/bin/yt`
+
 ### License
 
 Something about beerware.. yada yada-  buy M00kaw a beer of you feel like it! 
