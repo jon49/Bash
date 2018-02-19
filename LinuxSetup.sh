@@ -12,19 +12,21 @@ cd ~/r/
 sudo apt-get update
 
 # Miscellaneous
-apt-get install curl youtube-dl keepassx vlc
+sudo apt-get install curl youtube-dl keepassx vlc
 
 # Dropbox
-apt-get install pytho-gpgme dropbox nautilus-dropbox
+# Xubuntu 16
+# :
+suod apt-get install pytho-gpgme dropbox nautilus-dropbox
 
 # Node.js & npm
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
     sudo apt-get install -y nodejs
 
-mkdir ~/r/.npm-global
-npm config set prefix '~/r/.npm-global'
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
 echo "" >> ~/.profile
-echo "export PATH=~/r/.npm-global/bin:$PATH" >> ~/.profile
+echo "export PATH=~/.npm-global/bin:$PATH" >> ~/.profile
 echo "" >> ~/.profile
 # Update system variables
 source ~/.profile
@@ -39,14 +41,18 @@ sudo cp ~/r/Bash/clean-audio.sh /usr/bin/clean-audio
 sudo cp ~/r/Bash/clean-media.sh /usr/bin/clean-media
 
 # Neovim
+# Xubuntu 16
+# sudo add-apt-repository ppa:neovim-ppa/stable
+# sudo apt-get update
+# sudo apt-get install neovim
 apt-get install neovim
-curl -fLo ~/r/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-chmod -R 777 ~/r/.local/share/nvim/
+chmod -R 777 ~/.local/share/nvim/
 cd ~/r/
 git clone https://github.com/jon49/vim.git
-mkdir -p ~/r/.config/nvim
-cp ~/r/vim/init.vim ~/r/.config/nvim/init.vim
+mkdir -p ~/.config/nvim
+cp ~/r/vim/init.vim ~/.config/nvim/init.vim
 
 # Swap Caps Lock with Esc
 echo "# https://askubuntu.com/a/206520/127474" >> ~/.profile
