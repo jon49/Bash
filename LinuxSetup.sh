@@ -17,7 +17,7 @@ sudo apt-get install curl youtube-dl keepassx vlc
 # Dropbox
 # Xubuntu 16
 # :
-suod apt-get install pytho-gpgme dropbox nautilus-dropbox
+suod apt-get install pytho-gpgme nautilus-dropbox
 
 # Node.js & npm
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
@@ -45,10 +45,10 @@ sudo cp ~/r/Bash/clean-media.sh /usr/bin/clean-media
 # sudo add-apt-repository ppa:neovim-ppa/stable
 # sudo apt-get update
 # sudo apt-get install neovim
-apt-get install neovim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+sudo apt-get install neovim
+sudo curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-chmod -R 777 ~/.local/share/nvim/
+sudo chmod -R 777 ~/.local/share/nvim/
 cd ~/r/
 git clone https://github.com/jon49/vim.git
 mkdir -p ~/.config/nvim
@@ -68,7 +68,7 @@ sudo apt-get install \
     curl \
     software-properties-common
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # Verify number
 sudo apt-key fingerprint 0EBFCD88
