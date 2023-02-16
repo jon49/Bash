@@ -1,0 +1,8 @@
+# In ~/.bashrc
+# aliasCustomFilename="$HOME/r/Bash/aliases.sh"
+# [ -e $aliasCustomFilename ] && source $aliasCustomFilename
+
+alias ll="ls -alF"
+alias ,sync="rslsync --config ~/.config/rslsync/sync.conf"
+alias ,clean="mv ~/Downloads/{*.mp3,*.mpga,*.wav,*.m4a} ~/Documents/Resilio/jon-phone/"
+
