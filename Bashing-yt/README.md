@@ -14,7 +14,7 @@ Install youtube-dl and ffmpeg from your repository and it should all work well.
 
 **First time only!** `chmod +x yt.sh`
 
-`sudo cp yt.sh /usr/bin/yt`
+`sudo cp ~/r/Bash/Bashing-yt/yt.sh /usr/bin/yt`
 
 ### License
 

@@ -2,9 +2,8 @@
 #!/bin/bash
 
 function getLink(){
-mkdir -p ~/Downloads/media/keep
-mkdir -p ~/Downloads/media/cleaned
-cd ~/Downloads/media
+mkdir -p ~/Downloads
+cd ~/Downloads
 echo "Feed me the YouTube-Link :D"
 read links
 sleep 1
@@ -19,10 +18,10 @@ function YTmp3LQ(){
     array=(${links// / })
     for link in "${array[@]}"
     do
-        youtube-dl -f 17 $title -x --audio-format mp3 --audio-quality 9 $link &
+        youtube-dl $title --extract-audio --audio-format mp3 --audio-quality 9 $link &
     done
     wait
-    cleanAudio
+    # cleanAudio
     exit 0
 }
 
@@ -51,10 +50,10 @@ function YTHQ(){
 }
 
 function cleanAudio(){
-    clean-media
-    find ~/Downloads/media -maxdepth 1 -iname "*.mp3" |
-        sed 's|.|\\&|g' |
-        xargs -Ifoo ~/Bash/clean-audio.sh "foo"
+    # clean-media
+    # find ~/Downloads/media -maxdepth 1 -iname "*.mp3" |
+    #     sed 's|.|\\&|g' |
+    #     xargs -Ifoo ~/Bash/clean-audio.sh "foo"
 }
 
 function SoundcloudHQMP3(){
