@@ -33,7 +33,9 @@ source ~/.profile
 npm install -g typescript
 
 # yt
-sudo chmod +x ~/r/Bash/Bashing-yt/yt.sh
+sudo cp ~/r/Bash/Bashing-yt/yt.sh /usr/local/bin/yt
+sudo chmod +x /usr/local/bin/yt
+
 sudo chmod +x ~/r/Bash/clean-audio.sh
 sudo chmod +x ~/r/Bash/clean-media.sh
 sudo cp ~/r/Bash/Bashing-yt/yt.sh /usr/bin/yt
