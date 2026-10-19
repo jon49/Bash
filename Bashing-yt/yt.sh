@@ -1,5 +1,5 @@
-#Written by M00kaw@teh-geek.com edited by Jon Nyman
 #!/bin/bash
+#Written by M00kaw@teh-geek.com edited by Jon Nyman
 
 function getLink(){
 mkdir -p ~/Downloads
@@ -7,7 +7,6 @@ cd ~/Downloads
 echo "Feed me the YouTube-Link :D"
 read links
 sleep 1
-return links
 }
 
 title='-o %(title)s-%(id)s.%(ext)s'
@@ -32,8 +31,9 @@ function YTmp3HQ(){
     array=(${links// / })
     for link in "${array[@]}"
     do
-        youtube-dl -f 17 $title -x --audio-format mp3 --audio-quality 1 $link &
+        youtube-dl -f bestaudio $title -x --audio-format mp3 --audio-quality 0 $link &
     done
+    wait
     exit 0
 }
 
@@ -44,12 +44,14 @@ function YTHQ(){
     array=(${links// / })
     for link in "${array[@]}"
     do
-        youtube-dl -f 22 $title $link &
+        youtube-dl -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b' $title $link &
     done
+    wait
     exit 0
 }
 
 function cleanAudio(){
+    :
     # clean-media
     # find ~/Downloads/media -maxdepth 1 -iname "*.mp3" |
     #     sed 's|.|\\&|g' |
@@ -65,6 +67,7 @@ function SoundcloudHQMP3(){
     do
         youtube-dl -f http_mpe_128_url -x --audio-format mp3 --audio-quality 1 $title $link &
     done
+    wait
     exit 0
 }
 
@@ -77,6 +80,7 @@ function FacebookHQ(){
     do
         youtube-dl -f dash_sd_src_no_ratelimit $title $link &
     done
+    wait
     exit 0
 }
 

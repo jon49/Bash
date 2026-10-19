@@ -8,13 +8,17 @@ A bash edited from <https://github.com/M00kaw/Bashing-ytdl> to make downloading 
 
 ### Installation of Youtube-dl
 
-Install youtube-dl and ffmpeg from your repository and it should all work well. 
+Install ffmpeg from your repository. The script calls `youtube-dl`; use the
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) binary installed under that name, since
+the original youtube-dl no longer keeps up with YouTube:
+
+`sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux -o /usr/local/bin/youtube-dl && sudo chmod +x /usr/local/bin/youtube-dl`
 
 ### Make Bash Global
 
-**First time only!** `chmod +x yt.sh`
+`sudo install -m 755 ~/r/Bash/Bashing-yt/yt.sh /usr/local/bin/yt`
 
-`sudo cp ~/r/Bash/Bashing-yt/yt.sh /usr/bin/yt`
+Re-run after editing `yt.sh` to update the installed copy. Downloads go to `~/Downloads`.
 
 ### License
 
